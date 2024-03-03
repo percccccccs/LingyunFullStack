@@ -1,0 +1,84 @@
+.title{
+    top: 20px;
+    position: relative;
+    width:600px;
+    height: 100px;
+    background-color: #f87658;
+    left: 50%;
+    margin-left: -300px;
+}
+
+.welcome{
+    position: relative;
+    top: 80px;
+    width: 400px;
+    height: 70px;
+    left: 50%;
+    margin-left:-200px ;
+    font-size: 40px;
+    line-height: 50px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.box{
+    position: relative;
+    top: 120px;
+    width: 600px;
+    height: 480px;
+    background-color: rgb(224, 222, 223);
+    left: 50%;
+    margin-left: -600px;
+    border-radius: 10%;
+}
+
+.random{
+    position: absolute;
+    top: 90px;
+    width: 400px;
+    height: 100px;
+    left: 50%;
+    margin-left: -200px;
+    text-align: center;
+    line-height: 100px;
+    font-size: 43px;
+    font-weight: 500;
+}
+
+.password{
+    position: absolute;
+    top: 170px;
+    width: 400px;
+    height: 100px;
+    left: 50%;
+    margin-left: -200px;
+    font-size: 30px;
+    text-align: center;
+    line-height: 100px;
+}
+
+.confirm{
+    position: absolute;
+    top: 290px;
+    width: 200px;
+    height: 60px;
+    background-color: rgb(29, 91, 190);
+    left: 50%;
+    margin-left: -100px;
+    text-align: center;
+    line-height: 60px;
+    color: white;
+    font-size: 30px;
+    border-radius: 10px;
+    border: 1px solid rgb(224, 222, 223);
+}
+
+.back{
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background-color: red;
+    left: 5%;
+    top: 10%;
+}
+
