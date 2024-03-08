@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>个人信息页</title>
+    <style>
+        *{
+            margin:0 auto;
+        }
+        .top{
+            background-color:aua ;
+            width:100%;
+            height:300px;
+            display:flex;
+            flex-direction: row;
+        }
+        #logo{
+            position: relative;
+            width:200px;
+            height:150px;
+            background-image:url('https://florenceshine.oss-cn-beijing.aliyuncs.com/y.png');
+            background-size: cover;
+            left:10%;
+            line-height: 100px;
+            text-align: center;
+            font-size: larger;
+        }
+        #guanli{
+            position: relative;
+            width:600px;
+            height:100px;
+            background-color: ble;
+            right:1%;
+            line-height:100px;
+            text-align: center;
+            font-size: xx-large;
+        }
+        #introduce{
+            width: 100%;
+            height:30px;
+            background-color: blueviole;
+            text-indent: 450px;/*设置文本缩进的方式*/
+        }
+        #me1{
+            width:100%;
+            height:100px;
+            background-color:bron ;
+            text-indent:450px;
+            
+        }
+        .un{
+            text-align: center;
+            width:100%;
+            height:80px;
+            position:relative;
+            right:15%;
+            background-color: aua;
+        }
+        .bottom{
+            width:100%;
+            height:200px;
+            background-color: bluevilet;
+            line-height: 20;
+            text-align: center;
+        }
+        input{
+            width:500px
+        }
+        #back
+        {
+            width:100px;
+            height:50px;
+            position:relative;
+            right:10%;
+            top:10%;
+        }
+        label{
+            position:relative;
+            right:33%
+        }
+        #male{
+            position:relative;
+            right:13%;
+        }
+        #female{
+            position:relative;
+            right:13%;
+        }
+        button{
+            background-color: #3582FF;
+        }
+        #bt{
+            width:125px;
+            height:60px;
+        }
+        .me2{
+            display:flex;
+            flex-direction: column;
+            padding-left: 20%;
+        }
+    </style>
+</head>
+<body id="body">
+    <div class="top">
+        <div id="logo"></div>
+        <div  id="guanli">云顶书院管理系统</div>
+        <button id="back" onclick="tuichu()">退出登录</button>
+        <script>
+            function tuichu()
+            {
+                if(confirm("请问您是否确定退出系统？")==true)
+                {
+                   let body=document.getElementById("body");
+                    body.innerHTML="退出成功！";
+                    body.style.position='absolute';
+                    body.style.top='40%';
+                    body.style.right='30%';
+                    body.style.fontSize='100px';
+                }
+                else{
+                    return;
+                }
+            }
+        </script>
+        </div>
+        <div class="secondbody">
+            <div id="introduce">哦嗨哟，同学</div>
+            <div id="me1">
+               民族: <select id="minzu" name="民族">
+                <option value="han">汉族</option>
+                <option value="zhuang">壮族</option>
+                <option value="man">满族</option>
+                <option value="hui">回族</option>
+                <option value="miao">苗族</option>
+                <option value="wei">维吾尔族</option>
+                <option value="tujia">土家族</option>
+                <option value="yi">彝族</option>
+                <option value="meng">蒙古族</option>
+                <option value="zang">藏族</option>
+                <option value="buyi">布依族</option>
+                <option value="dong">侗族</option>
+                <option value="yao">瑶族</option>
+                <option value="chaoxian">朝鲜族</option>
+                <option value="bai">白族</option>
+                <option value="hani">哈尼族</option>
+                <option value="hasake">哈萨克族</option>
+                <option value="li">黎族</option>
+                <option value="dai">傣族</option>
+                <option value="lisu">傈僳族</option>
+                <option value="gelao">仡佬族</option>
+                <option value="dongxiang">东乡族</option>
+                <option value="gaoshan">高山族</option>
+                </select>
+                <div id="sex">
+                    性别：
+                    <form>  
+                        <div class="gender-radio">  
+                            <input type="radio" id="male" name="gender" value="male" >  
+                            <label for="male">男:</label>  
+                        </div>  
+                        <div class="gender-radio">  
+                            <input type="radio" id="female" name="gender" value="female" >  
+                            <label for="female">女:</label>  
+                        </div>  
+                    </form>  
+            </div>
+            <form class="me2">
+                <label for="student_number">学号：<input id="student_number" type="text" style="visibility:hidden;margin-bottom:5px"></label>
+                <label for="major_class">专业班级:<input id="major_class" type="text" style="visibility:hidden;margin-bottom:5px"></label>
+                <label for="position">职位:<input id="posiiton" type="text" style="visibility:hidden;margin-bottom:5px"></label>
+                <label for="grade">期数:<input id="grade" type="text" style="visibility:hidden;margin-bottom:5px"></label>
+                <label for="department_id">部门:<input id="department_id" type="password" style="visibility:hidden;margin-bottom:5px"></label>
+                <label for="award">荣誉:<input id="award" type="text" style="visibility:hidden;margin-bottom:5px"></label>
+                <label for="phone">电话:<input id="dianhua" type="text" style="visibility:hidden;margin-bottom:5px"></label>
+                <label for="email">邮箱:<input id="email" type="email" style="visibility:hidden;margin-bottom:5px"></label>
+            </form>
+            <script>
+               let xuehao=document.getElementById('student_number').value;
+               let zhuanyebanji=document.getElementById('major_class').value
+               let zhiwei=document.getElementById('position').value;
+               let qishu=document.getElementById('grade').value;
+               let bumen=document.getElementById('department_id').value;
+               let rongyu=document.getElementById('award').value;
+               let dianhua=document.getElementById('phone').value;
+               let youxiang=document.getElementById('email').value;
+                function bianji()
+                {
+                   document.getElementById("xuehao").style.visibility="visible";
+                   document.getElementById("zhuanyebanji").style.visibility="visible";
+                   document.getElementById("zhiwei").style.visibility="visible";
+                   document.getElementById("qishu").style.visibility="visible";
+                   document.getElementById("bumen").style.visibility="visible";
+                   document.getElementById("rongyu").style.visibility="visible";
+                   document.getElementById("dianhua").style.visibility="visible";
+                   document.getElementById("youxiang").style.visibility="visible";
+                   let bt=document.getElementById("bt");
+                   bt.innerHTML="确认保存";
+                   bt.type='submit';
+                   let xhr=new XMLHttpRequest();
+                   xhr.open('post','/admin/view_information','true');
+                   xhr.setRequestHeader('text','json');
+                   if (xhr.readyState === 4 && xhr.status === 200) {  
+          var response = JSON.parse(xhr.responseText);  
+          // 处理响应数据  
+          console.log(response);  
+          // 更新前端界面  
+          document.getElementById('response').textContent = response.message;  
+          
+      };  
+      xhr.send(JSON.stringify({ input: inputValue }));  
+      
+    }   
+            </script>
+            <div class="un">
+                <button id="bt" onclick="bianji()">编辑信息</button>
+            </div>
+            <div class="bottom"></div>
+        </div>
+</body>
+</html>
