@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>信息文件</title>
+    <style>
+        *{
+            margin:0 auto;
+        }
+        .head{
+            width:100%;
+            height:300px;
+            display: flex;
+            flex-direction: row;
+        }
+        #logo{
+            position:relative;
+            width:150px;
+            height:100px;
+            background-image:url('https://florenceshine.oss-cn-beijing.aliyuncs.com/y.png');
+            background-size: cover;
+        }
+        #title{
+            width:600px;
+            height:100px;
+            line-height: 100px;
+            text-align: center;
+        }
+        #offset{
+            position:relative;
+            width:150px;
+            height:50px;
+            top:10%;
+        }
+        .neck{
+            width:100%;
+            height:100px;
+            text-align: center;
+            line-height: 100px;
+            font-size: xx-large;
+            font-weight: bold;
+            font-family: 宋体;
+        }
+        .shenti{
+            width:700px;
+            height:600px;
+            background-color: #ccc;
+            border: #cfcfcf 2px solid;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
+        }
+        .button{
+            width:100%;
+            height:100px;
+        }
+        #reset{
+            position:relative;
+            left:55%;
+            top:50%
+        }
+        #zhuxiao{
+            position:relative;
+            left:15%;
+            top:50%;
+        }
+        button{
+            width:200px;
+            height:50px;
+            font-size: larger;
+            background-color: #3582FF;
+        }
+    </style>
+</head>
+<body id="body">
+    <div class="head">
+        <div id="logo"></div>
+        <div id="title"><h2>云顶书院学生管理系统</h2></div>
+        <button id="offset" onclick="tuichu()">退出登录</button>
+    </div>
+    <script>
+         function tuichu()
+            {
+                if(confirm("确认登出账号？")==true)
+                {
+                   let body=document.getElementById("body");
+                    body.innerHTML="退出成功！";
+                    body.style.position='absolute';
+                    body.style.top='40%';
+                    body.style.right='30%';
+                    body.style.fontSize='100px';
+                }
+                else{
+                    return;
+                }
+            }
+    </script>
+    <div class="neck">哦嗨哟，管理员</div>
+    <form class="shenti">
+         <label for="name">姓名：<input id="name" style="visibility:hidden;margin-bottom:25px;"><br></label>
+        <label for="age">年龄：<input id="age" style="visibility:hidden;margin-bottom:25px;"><br></label>
+        <label for="sex">性别:<input id="sex" style="visibility:hidden;margin-bottom:25px;"><br></label>
+        <label for="minzu">民族：<input id="minzu" style="visibility:hidden;margin-bottom:25px;"><br></label>
+        <label for="xuehao">学号： <input id="xuehao" style="visibility:hidden;margin-bottom:25px;"><br></label>
+        <label for="banji">班级：<input id="zhuanyebanji" style="visibility:hidden;margin-bottom:25px;"><br></label>
+        <label for="zhiwei">职位：<input id="zhiwei" style="visibility:hidden;margin-bottom:25px;"><br></label>
+        <label for="qishu">期数：<input id="qishu" style="visibility:hidden;margin-bottom:25px;"><br></label>
+        <label for="bumen">部门：<input id="bumen" style="visibility:hidden;margin-bottom:25px;"><br></label>
+        <label for="dianhua">电话：<input id="dianhua" style="visibility:hidden;margin-bottom:25px;"><br></label>
+        <label for="youxiang">邮箱：<input id="youxiang" style="visibility:hidden;margin-bottom:25px;"><br></label>
+    </form>
+    <div class="button">
+        <button id="reset" type="reset" onclick="reset()">重置密码</button>
+        <script>/*重置代码*/
+        </script>
+        <button id="zhuxiao" onclick="zhuxiao()">注销账号</button>
+    </div>
+</body>
+</html>

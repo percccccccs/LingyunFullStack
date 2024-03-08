@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>管理员主页</title>
+    <script src="./echarts.min.js"></script>
+    <style>
+        .header {
+            margin: 50px auto;
+            width: 1000px;
+            height: 70px;
+            color: #565052;
+            display: flex; /* 使用Flexbox布局 */
+            align-items: center; /* 垂直居中 */
+            justify-content: center; /* 水平居中 */
+        }
+
+        .header img {
+            height: 50px; /* 调整图像高度以匹配标题 */
+            margin-right: 10px; /* 可选：为标题和图像之间添加一些间距 */
+        }
+
+        .header button {
+            margin-left: 200px;
+            background-color: #3c81f1;
+            color: white;
+            width: 90px;
+            height: 30px;
+        }
+
+        .header h1 {
+            margin: 0; /* 清除默认边距 */
+        }
+
+        .home {
+            margin: 50px auto;
+            width: 800px;
+            height: 600px;
+            background-color: #e0dfdf;
+            border: #cfcfcf 2px solid;
+            border-radius: 10px;
+            text-align: center; /* 水平居中文本和内联元素 */
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
+        }
+
+        .home #draw {
+            margin: 50px auto;
+            height: 350px;
+            width: 600px;
+            border-color: #b4b4b4;
+            background-color: #f6f6f6;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .home .box {
+            text-align: center;
+            display: flex;
+            color: white; /* 设置字体颜色为白色 */
+        }
+
+        .innerBox {
+            background-color: #014ecc; /* 设置背景颜色为蓝色 */
+            width: 80px;
+            height: 80px;
+            margin: auto;
+            display: flex; /* 使用 Flexbox 布局 */
+            flex-direction: column; /* 在垂直方向上排列 */
+            align-items: center; /* 垂直居中 */
+            justify-content: center; /* 水平居中 */
+            border-radius: 10px; /* 设置圆角 */
+        }
+
+        .innerBox span {
+            font-size: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <img src="./logo.png" alt="logo">
+    <h1>云顶书院学生管理系统</h1>
+    <button>退出登录</button>
+</div>
+<div class="home">
+    <h4>您好，管理员</h4>
+    <div id="draw">
+    </div>
+    <div class="box">
+        <div class="innerBox">
+            六期
+            <span>人数</span>
+        </div>
+        <div class="innerBox">
+            七期
+            <span>人数</span>
+        </div>
+        <div class="innerBox">
+            八期
+            <span>人数</span>
+        </div>
+        <div class="innerBox">
+            九期
+            <span>人数</span>
+        </div>
+    </div>
+</div>
+</body>
+
+<script>
+    var chartDom = document.getElementById('draw');
+    var myChart = echarts.init(chartDom);
+    var option = {
+        title: {
+            text: '人数',
+            subtext: '数据',
+            left: 'center'
+        },
+        tooltip: {
+            trigger: 'item'
+        },
+        legend: {
+            orient: 'vertical',
+            left: 'left'
+        },
+        series: [
+            {
+                name: '人数',
+                type: 'pie',
+                radius: '50%',
+                data: [
+                    {value: 1048, name: '全栈'},
+                    {value: 735, name: 'java'},
+                    {value: 580, name: '数据科学'},
+                    {value: 484, name: 'cpuos'},
+                ],
+                emphasis: {
+                    itemStyle: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }
+        ]
+    };
+    option && myChart.setOption(option);
+</script>
+</html>

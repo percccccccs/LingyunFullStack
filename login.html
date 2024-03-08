@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>云顶书院学生管理系统</title>
+    <style>
+        .header {
+            margin: 50px auto;
+            width: 700px;
+            height: 70px;
+            color: #565052;
+            display: flex; /* 使用Flexbox布局 */
+            align-items: center; /* 垂直居中 */
+            justify-content: center; /* 水平居中 */
+        }
+
+        .header img {
+            height: 50px; /* 调整图像高度以匹配标题 */
+            margin-right: 10px; /* 可选：为标题和图像之间添加一些间距 */
+        }
+
+        .header h2 {
+            margin: 0; /* 清除默认边距 */
+        }
+
+        .login {
+            margin: 100px auto;
+            width: 340px;
+            height: 320px;
+            border: #cfcfcf 2px solid;
+            border-radius: 10px;
+            text-align: center; /* 水平居中文本和内联元素 */
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
+        }
+
+        .login input {
+            margin: 6px 60px;
+            height: 40px;
+            width: 220px;
+            text-align: left; /* 使输入框内文本左对齐 */
+            border-color: #b4b4b4;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); 
+        }
+
+        .login button {
+            display: block;
+            margin-left: 100px;
+            margin-top: 30px;
+            width: 150px;
+            height: 35px;
+            background-color: #3c81f1;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+        }
+
+        .login span a {
+            text-decoration: none;
+            color: #3c81f1;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="./logo.png" alt="logo">
+        <h1>云顶书院学生管理系统</h1>
+    </div>
+    <div class="login">
+        <h4>登录账号</h4>
+        <input id="username" type="text" placeholder="账号">
+        <input id="password" type="password" placeholder="密码">
+        <button id="loginButton" type="button">登录</button>
+        <br>
+        <span id="loginMessage">没有账号?<a href="./register.html">注册账号</a></span>
+    </div>
+
+<script>
+        // 获取登录按钮元素
+        var loginButton = document.getElementById('loginButton');
+
+        // 添加点击事件处理程序
+        loginButton.addEventListener('click', function() {
+            // 获取输入框中的用户名和密码
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // 假设正确的用户名和密码是 '666666' 和 '123456'
+            var correctUsername = '666666';
+            var correctPassword = '123456';
+
+            // 检查用户名和密码是否正确
+            if (username === correctUsername && password === correctPassword) {
+                // 如果正确，显示登录成功消息
+                document.getElementById('loginMessage').innerText = '登录成功';
+            } else {
+                // 如果错误，显示登录失败消息
+                document.getElementById('loginMessage').innerText = '用户名或密码错误';
+            }
+        });
+    </script>
+</body>
+</html>

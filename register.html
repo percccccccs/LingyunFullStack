@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>云顶书院学生管理系统</title>
+    <style>
+        .header {
+            margin: 50px auto;
+            width: 700px;
+            height: 70px;
+            color: #565052;
+            display: flex; /* 使用Flexbox布局 */
+            align-items: center; /* 垂直居中 */
+            justify-content: center; /* 水平居中 */
+        }
+
+        .header img {
+            height: 50px; /* 调整图像高度以匹配标题 */
+            margin-right: 10px; /* 可选：为标题和图像之间添加一些间距 */
+        }
+
+        .header h2 {
+            margin: 0; /* 清除默认边距 */
+        }
+
+        .login {
+            margin: 100px auto;
+            width: 500px;
+            height: 600px;
+            border: #cfcfcf 2px solid;
+            border-radius: 10px;
+            text-align: center; /* 水平居中文本和内联元素 */
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
+        }
+
+        .login h2 {
+            margin-top: 56px;
+        }
+
+        .login input {
+            padding-left: 30px;
+            margin: 6px 60px;
+            height: 55px;
+            width: 300px;
+            text-align: left; /* 使输入框内文本左对齐 */
+            border-color: #b4b4b4;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
+            font-size: 15px;
+        }
+
+        .login p {
+            display: inline;
+            margin-right: 92px;
+            font-size: 13px;
+        }
+
+        .login .yzm {
+            display: flex;
+            align-items: center; /* 垂直居中 */
+            justify-content: flex-start; /* 左对齐 */
+            margin: 6px 25px; 
+        }
+
+        .login .inputYzm {
+            height: 55px;
+            width: 180px; /* 调整验证码输入框宽度 */
+            text-align: left; /* 使输入框内文本左对齐 */
+            border-color: #b4b4b4;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
+            font-size: 15px;
+            margin-right: 10px; /* 调整验证码输入框与图片之间的间距 */
+        }
+
+        .login .yzmpic {
+            height: 55px;
+            border: #b4b4b4;
+        }
+
+        .login .yzmpic img {
+            display: block;
+            height: 40px; /* 调整图片高度 */
+            border: #b4b4b4 1px solid;
+        }
+
+        .login .yzm p {
+            margin-right: 70px;
+        }
+
+        .login button {
+            display: block;
+            margin-left: 125px;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            width: 240px;
+            height: 40px;
+            background-color: #3c81f1;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 20px;
+        }
+
+        .login span a {
+            margin-right: 23px;
+            text-decoration: none;
+            color: #3269a5;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="./logo.png" alt="logo">
+        <h1>云顶书院学生管理系统</h1>
+    </div>
+    <div class="login">
+        <h2>注册账号</h2>
+        <input id="stuNumber" type="text" placeholder="学号">
+        <input id="password" type="password" placeholder="输入密码">
+        <br>
+        <p>密码必须包含数字，大小写字母</p>
+        <input id="repassword" type="password" placeholder="确认密码">
+        <div class="yzm">
+            <input class="inputYzm" id="password" type="text" placeholder="输入验证码">
+            <div class="yzmpic">
+                <img src="./yzm.jpg" alt="验证码">
+                <p>看不清，换一张</p>
+            </div>
+        </div>
+        
+        <!-- 验证码 -->
+
+        <button id="registButton" type="button">立即注册</button>
+        <br>
+        <span id="registerMessage">注册时遇到问题?<br><a href="#">进入帮助中心</a></span>
+    </div>
+
+    <script>
+        // JavaScript 代码在这里
+        document.getElementById('registButton').addEventListener('click', function() {
+            var stuNumber = document.getElementById('stuNumber').value;
+            var password = document.getElementById('password').value;
+            var repassword = document.getElementById('repassword').value;
+
+            // 验证密码格式
+            var passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+            if (!passwordRegex.test(password)) {
+                alert('密码必须包含数字、小写字母、大写字母，并且至少6个字符！');
+                return;
+            }
+
+            // 检查两次输入的密码是否相同
+            if (password !== repassword) {
+                alert('两次输入的密码不一致！');
+                return;
+            }
+
+            // 其他注册逻辑在此处添加
+
+            // 如果一切验证通过，可以在这里提交表单或执行其他操作
+            alert('注册成功！');
+        });
+    </script>
+</body>
+</html>
