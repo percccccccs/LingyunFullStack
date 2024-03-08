@@ -167,11 +167,11 @@
             <form class="me2">
                 <label for="student_number">学号：<input id="student_number" type="text" style="visibility:hidden;margin-bottom:5px"></label>
                 <label for="major_class">专业班级:<input id="major_class" type="text" style="visibility:hidden;margin-bottom:5px"></label>
-                <label for="position">职位:<input id="posiiton" type="text" style="visibility:hidden;margin-bottom:5px"></label>
+                <label for="position">职位:<input id="position" type="text" style="visibility:hidden;margin-bottom:5px"></label>
                 <label for="grade">期数:<input id="grade" type="text" style="visibility:hidden;margin-bottom:5px"></label>
                 <label for="department_id">部门:<input id="department_id" type="password" style="visibility:hidden;margin-bottom:5px"></label>
                 <label for="award">荣誉:<input id="award" type="text" style="visibility:hidden;margin-bottom:5px"></label>
-                <label for="phone">电话:<input id="dianhua" type="text" style="visibility:hidden;margin-bottom:5px"></label>
+                <label for="phone">电话:<input id="phone" type="text" style="visibility:hidden;margin-bottom:5px"></label>
                 <label for="email">邮箱:<input id="email" type="email" style="visibility:hidden;margin-bottom:5px"></label>
             </form>
             <script>
@@ -185,14 +185,14 @@
                let youxiang=document.getElementById('email').value;
                 function bianji()
                 {
-                   document.getElementById("xuehao").style.visibility="visible";
-                   document.getElementById("zhuanyebanji").style.visibility="visible";
-                   document.getElementById("zhiwei").style.visibility="visible";
-                   document.getElementById("qishu").style.visibility="visible";
-                   document.getElementById("bumen").style.visibility="visible";
-                   document.getElementById("rongyu").style.visibility="visible";
-                   document.getElementById("dianhua").style.visibility="visible";
-                   document.getElementById("youxiang").style.visibility="visible";
+                   document.getElementById("student_number").style.visibility="visible";
+                   document.getElementById("major_class").style.visibility="visible";
+                   document.getElementById("position").style.visibility="visible";
+                   document.getElementById("grade").style.visibility="visible";
+                   document.getElementById("department_id").style.visibility="visible";
+                   document.getElementById("award").style.visibility="visible";
+                   document.getElementById("phone").style.visibility="visible";
+                   document.getElementById("email").style.visibility="visible";
                    let bt=document.getElementById("bt");
                    bt.innerHTML="确认保存";
                    bt.type='submit';
